@@ -1,4 +1,8 @@
 const express = require("express");
+require("./conn/connect");
+
+
+
 
 const app= express();
 
