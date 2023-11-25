@@ -15,3 +15,15 @@ app.listen(8080 ,()=>{
 
 app.use("/api" ,userRoute);
 app.use("/api",authRoute);
+
+//--error for all files ---- it  is function ---
+
+app.use((err,req,res,next)=>{
+    const statusCode = err.statusCode || 500;
+    const message = err.message || "Iinternal Server Error";
+    return res.status(statusCode).json({
+        success: false,
+        statusCode,
+        message,
+    })
+})
