@@ -2,8 +2,10 @@ const express = require("express");
 require("./conn/connect");
 const userRoute = require("./router/user_router");
 const authRoute = require("./router/auth_router");
+const bodyParser = require("body-parser");
 
 const cors = require('cors');
+
 
 
 
@@ -13,6 +15,7 @@ const app= express();
 
 app.use(express.json());
 app.use(cors());
+
 
 app.listen(8080 ,()=>{
     console.log("server is running on port no 8080 !")
